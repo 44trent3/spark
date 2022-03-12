@@ -14,9 +14,10 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle'
 
-tasks.withType(JavaCompile) {
-    // override, compile targeting J17
-    options.release = 17
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 minecraft {

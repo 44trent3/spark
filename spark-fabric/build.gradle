@@ -5,9 +5,10 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.0.0'
 }
 
-tasks.withType(JavaCompile) {
-    // override, compile targeting J17
-    options.release = 17
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 repositories {
